@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Merry Christmas</title>
+  <style>
+    /* Basic Reset */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #282c34;
+    }
+
+    /* Background styling background: url('https://www.example.com/christmas-background.jpg') no-repeat center center/cover;*/
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('./assets/20241224_194545\ \(2\).jpg') no-repeat center center/cover;
+      
+      filter: blur(2px);
+    }
+
+    /* Text styling */
+    .message {
+      font-family: 'Arial', sans-serif;
+      color: #fff;
+      font-size: 50px;
+      text-align: center;
+      text-transform: uppercase;
+      animation: fadeInMove 4s ease-in-out infinite;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Animation for text */
+    @keyframes fadeInMove {
+      0% {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      50% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+    }
+
+    /* Snowflakes animation */
+    .snowflakes {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      color: greenyellow;
+    }
+
+    .snowflakes span {
+      position: absolute;
+      background: #fff;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: snow 10s linear infinite;
+    }
+
+    /* Snowflakes animation effect */
+    @keyframes snow {
+      0% {
+        transform: translateY(-10px) rotate(0deg);
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+      }
+    }
+
+    .snowflakes span:nth-child(1) {
+      left: 10%;
+      width: 5px;
+      height: 5px;
+      animation-duration: 15s;
+      animation-delay: -5s;
+    }
+
+    .snowflakes span:nth-child(2) {
+      left: 20%;
+      width: 8px;
+      height: 8px;
+      animation-duration: 12s;
+      animation-delay: -3s;
+    }
+
+    .snowflakes span:nth-child(3) {
+      left: 30%;
+      width: 6px;
+      height: 6px;
+      animation-duration: 18s;
+      animation-delay: -7s;
+    }
+
+    .snowflakes span:nth-child(4) {
+      left: 40%;
+      width: 7px;
+      height: 7px;
+      animation-duration: 10s;
+      animation-delay: -2s;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="background"></div>
+  <div class="message">Merry Christmas</div>
+
+  <div class="snowflakes">
+    <span>🎄From</span>
+    <span>Felicity💝</span>
+    <span>💝To</span>
+    <span>My friends & Family🎄</span>
+  </div>
+
+</body>
+</html>
